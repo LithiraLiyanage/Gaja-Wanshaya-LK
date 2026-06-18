@@ -326,58 +326,6 @@ No backend or database setup is required.
 
 ---
 
-## 🚀 How to Run Locally
-
-### Method 1: Open Directly
-
-Download or clone the project and open:
-
-```bash
-index.html
-```
-
-in your browser.
-
-### Method 2: Using VS Code Live Server
-
-1. Open the project folder in VS Code
-2. Install the **Live Server** extension
-3. Right-click on `index.html`
-4. Click **Open with Live Server**
-
----
-
-## 🌍 Deployment
-
-This project can be deployed using:
-
-* Vercel
-* GitHub Pages
-* Netlify
-
-### Recommended Deployment: Vercel
-
-1. Push the project to GitHub
-2. Go to Vercel
-3. Import the GitHub repository
-4. Select **Other** as the framework preset
-5. Keep build settings blank
-6. Click **Deploy**
-
----
-
-## 📸 Screenshots
-
-> Add screenshots after deployment.
-
-```md
-![Homepage Screenshot](./screenshots/home.png)
-![Map Screenshot](./screenshots/map.png)
-![Profiles Screenshot](./screenshots/profiles.png)
-```
-
----
-
 ## 💡 Future Improvements
 
 * Add Node.js / Express.js backend
