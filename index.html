@@ -239,7 +239,8 @@
       font-size:.74rem;font-weight:1000;white-space:nowrap;box-shadow:0 10px 22px rgba(44,73,55,.18);border:1px solid rgba(95,134,110,.16);backdrop-filter:blur(8px);line-height:1.2;
     }
     .map-place.active .pin-label{background:#EAF7CC}
-    .minneriya-pin{left:59%;top:36.8%}.kaudulla-pin{left:63%;top:34.7%}.wasgamuwa-pin{left:56%;top:47.2%}.pinnawala-pin{left:39.7%;top:48.2%}.udawalawe-pin{left:48%;top:76%}.yala-pin{left:66.5%;top:81.5%}
+    /* Pinnawala fixed to Kegalle District / Rambukkana area */
+    .minneriya-pin{left:59%;top:36.8%}.kaudulla-pin{left:63%;top:34.7%}.wasgamuwa-pin{left:56%;top:47.2%}.pinnawala-pin{left:43.2%;top:60.6%}.udawalawe-pin{left:48%;top:76%}.yala-pin{left:66.5%;top:81.5%}
     .minneriya-pin .pin-label{left:28px;top:-2px}.kaudulla-pin .pin-label{left:28px;top:-30px}.wasgamuwa-pin .pin-label{left:20px;top:28px}.pinnawala-pin .pin-label{right:26px;top:-2px}.udawalawe-pin .pin-label{left:-18px;top:30px}.yala-pin .pin-label{left:24px;top:26px}
     .map-compass{position:absolute;top:14px;left:14px;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.86);border:1px solid var(--line);color:var(--green2);font-weight:900;z-index:70;backdrop-filter:blur(10px)}
     .map-compass small{font-size:.78rem}
@@ -319,7 +320,7 @@
       .burger{display:block}.hero{padding-top:112px}.hero-stats,.grid,.feature-grid,.stat-grid,.search-bar,.facts-grid,.gallery-grid{grid-template-columns:1fr}.fact-card.featured,.gallery-card.wide{grid-column:auto}.gallery-card.tall{grid-row:auto}
       .hero-slider,.slide img{min-height:420px;border-radius:30px}.hero-note{left:14px;bottom:78px;width:min(88%,320px)}.slider-controls{right:14px;bottom:14px}.slider-dots{left:18px;transform:none;bottom:30px}
       .real-map-wrap{width:min(100%,350px);min-height:530px;padding:52px 12px 20px}.map-canvas{width:min(310px,78vw)}.map-pin{width:28px;height:28px;font-size:.76rem}.pin-label{font-size:.64rem;padding:5px 7px}
-      .minneriya-pin .pin-label{left:22px;top:-1px}.kaudulla-pin .pin-label{left:22px;top:-25px}.wasgamuwa-pin .pin-label{left:16px;top:24px}.pinnawala-pin .pin-label{right:22px;top:-1px}.udawalawe-pin .pin-label{left:-16px;top:25px}.yala-pin .pin-label{left:20px;top:22px}
+      .minneriya-pin .pin-label{left:22px;top:-1px}.kaudulla-pin .pin-label{left:22px;top:-25px}.wasgamuwa-pin .pin-label{left:16px;top:24px}.pinnawala-pin .pin-label{right:26px;top:-2px}.udawalawe-pin .pin-label{left:-16px;top:25px}.yala-pin .pin-label{left:20px;top:22px}
       .story-photo,.story-photo img{min-height:390px}.step{grid-template-columns:1fr}.timeline::before{display:none}.mini-gallery{grid-template-columns:1fr}.mini-gallery img,.mini-gallery img:first-child{grid-column:auto;height:220px}.detail-list{grid-template-columns:1fr}.lightbox-nav{display:none}
     }
   </style>
@@ -618,7 +619,7 @@
       wasgamuwa:{title:"වස්ගමුව ජාතික උද්‍යානය",desc:"වස්ගමුව වියළි කලාපීය වනාන්තර සහ ජල මූලාශ්‍ර සමඟ අලි ජීවිතයට වැදගත් වාසස්ථානයක් සපයයි.",type:"Dry Zone Forest",best:"වනාන්තර habitat",query:"Wild",filter:"wild",badge:"Forest Habitat",placeLabel:"වස්ගමුව"},
       yala:{title:"යාල ජාතික උද්‍යානය",desc:"යාල ශ්‍රී ලංකාවේ ජනප්‍රිය wildlife destination එකක්. අලි ඇතුන්ට අමතරව තවත් බොහෝ වන සතුන් මෙහි දැකිය හැක.",type:"Wildlife Park",best:"Safari / Wildlife",query:"Yala",filter:"wild",badge:"Wildlife Destination",placeLabel:"යාල"},
       udawalawe:{title:"උඩවලව ජාතික උද්‍යානය",desc:"උඩවලව ජලාශය, විවෘත තණබිම් සහ Elephant Transit Home සමඟ අලි නිරීක්ෂණයට හා සංරක්ෂණයට ඉතා වැදගත් ප්‍රදේශයකි.",type:"Conservation + Wild",best:"Transit Home / Herds",query:"උඩවලව",filter:"conservation",badge:"Conservation Zone",placeLabel:"උඩවලව"},
-      pinnawala:{title:"පින්නවල අලි ආශ්‍රමය",desc:"පින්නවල අලි පැටවුන් සහ අලි welfare ගැන දැනුවත් කිරීමට ජනප්‍රිය ස්ථානයක් ලෙස හඳුන්වයි.",type:"Elephant Care",best:"Awareness / Care",query:"Conservation",filter:"conservation",badge:"Elephant Care",placeLabel:"පින්නවල"}
+      pinnawala:{title:"පින්නවල අලි ආශ්‍රමය",desc:"පින්නවල අලි ආශ්‍රමය කෑගල්ල දිස්ත්‍රික්කයේ රඹුක්කන අසල පිහිටා ඇති ප්‍රසිද්ධ elephant care හා awareness ස්ථානයකි.",type:"Elephant Care",best:"කෑගල්ල / රඹුක්කන",query:"Conservation",filter:"conservation",badge:"Elephant Care",placeLabel:"පින්නවල"}
     };
 
     const baseProfiles = [
