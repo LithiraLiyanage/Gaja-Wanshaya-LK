@@ -323,6 +323,49 @@
       .minneriya-pin .pin-label{left:22px;top:-1px}.kaudulla-pin .pin-label{left:22px;top:-25px}.wasgamuwa-pin .pin-label{left:16px;top:24px}.pinnawala-pin .pin-label{right:26px;top:-2px}.udawalawe-pin .pin-label{left:-16px;top:25px}.yala-pin .pin-label{left:20px;top:22px}
       .story-photo,.story-photo img{min-height:390px}.step{grid-template-columns:1fr}.timeline::before{display:none}.mini-gallery{grid-template-columns:1fr}.mini-gallery img,.mini-gallery img:first-child{grid-column:auto;height:220px}.detail-list{grid-template-columns:1fr}.lightbox-nav{display:none}
     }
+  
+    /* ===== MOBILE RESPONSIVE FIX - ADDED ===== */
+    @media (max-width:720px){
+      html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+      .reveal,.step{opacity:1!important;transform:none!important;visibility:visible!important}
+      section{padding:56px 0}
+      .container{width:calc(100% - 22px)}
+      .nav{padding:10px 0;background:rgba(246,249,240,.94);backdrop-filter:blur(14px)}
+      .brand{color:var(--green2)!important;font-size:.92rem}
+      .brand-icon{width:42px;height:42px;border-radius:14px}
+      .burger{display:block;color:var(--green2)!important;border-color:rgba(47,125,89,.16);background:rgba(47,125,89,.07)}
+      .hero{min-height:auto;padding:98px 0 44px}
+      .hero-grid,.feature-grid,.stat-grid,.grid,.facts-grid,.conservation-grid,.checklist-grid,.admin-grid,.form-grid,.story-grid,.perahera-grid,.ele-map-layout,.final-cta-card{grid-template-columns:1fr!important}
+      .hero h1{font-size:clamp(2.55rem,15.5vw,4.4rem);line-height:.95;margin-bottom:16px}
+      .lead{font-size:.98rem;line-height:1.8}
+      .hero-actions{gap:10px;margin:22px 0}.btn{width:100%;padding:13px 16px}
+      .hero-stats{grid-template-columns:1fr!important;gap:10px}
+      .hero-slider{min-height:360px!important;border-radius:28px}.slide img{min-height:360px!important}
+      .hero-note{left:12px;right:12px;bottom:70px;width:auto;padding:14px;border-radius:20px}.hero-note p{font-size:.84rem;line-height:1.55}
+      .slider-dots{left:14px;transform:none;bottom:22px}.slider-controls{right:12px;bottom:10px}
+      .section-head{align-items:start;flex-direction:column;gap:10px;margin-bottom:22px}.section-title{font-size:clamp(1.9rem,11vw,3.1rem)}.section-desc{font-size:.94rem;line-height:1.75}
+      .search-bar{position:relative;top:auto;grid-template-columns:1fr!important;padding:14px}.card-img{height:220px}
+      .real-map-panel{min-height:auto;padding:14px;overflow:visible!important}.real-map-wrap{width:100%;min-height:500px;padding:46px 8px 20px;overflow:visible!important}
+      .map-canvas{width:min(315px,82vw);overflow:visible!important}.real-lanka-map{width:100%}
+      .map-pin{width:28px;height:28px;font-size:.74rem;box-shadow:0 8px 18px rgba(11,53,36,.25),0 0 0 6px rgba(216,232,154,.22)}
+      .pin-label{font-size:.61rem;padding:5px 7px;max-width:96px;white-space:nowrap}
+      .minneriya-pin .pin-label{left:20px;top:-1px}.kaudulla-pin .pin-label{left:20px;top:-22px}.wasgamuwa-pin .pin-label{left:15px;top:22px}.pinnawala-pin .pin-label{right:22px;top:-1px}.udawalawe-pin .pin-label{left:-12px;top:23px}.yala-pin .pin-label{left:18px;top:20px}
+      .map-info-card{min-height:auto;padding:20px}.map-visual-card{min-height:190px}.map-visual-card img{height:200px}.map-thumb{height:64px}
+      .gallery-grid{grid-template-columns:1fr!important;grid-auto-rows:auto}.gallery-card,.gallery-card.tall,.gallery-card.wide{grid-column:auto!important;grid-row:auto!important;height:230px}
+      .mini-gallery{grid-template-columns:1fr!important}.mini-gallery img,.mini-gallery img:first-child{grid-column:auto!important;height:210px}
+      .story-photo,.story-photo img{min-height:330px}.timeline::before{display:none}.step{grid-template-columns:1fr}
+      .bars{height:220px;gap:12px}
+      .modal-box{width:100%;max-height:88vh;padding:12px;border-radius:24px}.modal-layout{grid-template-columns:1fr!important}.modal-img,.modal-img img{min-height:260px}.detail-list{grid-template-columns:1fr!important}
+      .lightbox-content img{max-height:66vh}.lightbox-nav{display:none}
+      .final-cta{padding:58px 0}.final-cta-card{padding:22px}.final-cta h2{font-size:2rem}
+    }
+    @media (max-width:480px){
+      .reveal,.step{opacity:1!important;transform:none!important;visibility:visible!important}
+      .hero-slider,.slide img{min-height:330px!important}
+      .map-canvas{width:min(300px,84vw)}
+      .pin-label{font-size:.58rem}
+    }
+
   </style>
 </head>
 
@@ -862,6 +905,19 @@
 
     $("#adminForm").onsubmit=e=>{e.preventDefault(); const name=$("#adminName").value.trim(), image=$("#adminImage").value.trim()||fallbackImage, desc=$("#adminDesc").value.trim(); if(!name||desc.length<8){toast("නම සහ description දාන්න");return;} customProfiles.push({name,type:"Admin Added",category:"custom",era:"Demo",theme:"User Added Profile",note:"localStorage demo profile",image,tags:[name,"custom"],short:desc,desc,extra:"මෙය Admin Demo Mode එකෙන් add කළ profile එකකි."}); localStorage.setItem("gajaCustomProfiles",JSON.stringify(customProfiles)); $("#adminForm").reset(); $("#adminSuccess").style.display="block"; renderProfiles(); toast("Custom profile add වුණා");};
     $("#clearCustom").onclick=()=>{customProfiles=[];localStorage.removeItem("gajaCustomProfiles");renderProfiles();toast("Custom profiles clear වුණා");};
+  
+    // Mobile emergency visibility fallback
+    setTimeout(() => {
+      document.querySelectorAll(".reveal, .step").forEach(el => {
+        el.classList.add("visible", "step-visible");
+        el.style.opacity = "1";
+        el.style.transform = "none";
+        el.style.visibility = "visible";
+      });
+      const loaderEl = document.getElementById("loader");
+      if (loaderEl) loaderEl.classList.add("hide");
+    }, 1800);
+
   </script>
 </body>
 </html>
